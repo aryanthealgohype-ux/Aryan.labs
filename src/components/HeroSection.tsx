@@ -114,7 +114,7 @@ const HeroSection = () => {
                 <img
                   src={portfolioImage}
                   alt="Aryan Khan - Software Developer"
-                  className="w-full h-full object-contain object-center"
+                  className="w-full h-full object-cover object-[70%_15%]"
                 />
               </div>
 

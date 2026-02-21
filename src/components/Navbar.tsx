@@ -87,7 +87,7 @@ const Navbar = () => {
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <a
-            href="#contact"
+            href="/resume"
             className="flex items-center gap-2 btn-3d text-primary-foreground px-5 py-2 rounded-full text-sm font-medium"
           >
             Resume <Download size={14} />
@@ -132,7 +132,7 @@ const Navbar = () => {
             );
           })}
           <a
-            href="#contact"
+            href="/resume"
             className="flex items-center justify-center gap-2 btn-3d text-primary-foreground px-5 py-3 rounded-full text-sm font-medium mt-2"
           >
             Resume <Download size={14} />
