@@ -58,6 +58,10 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section min-h-screen flex items-center pt-28 relative bg-background" id="hero">
+      {/* Premium JS background accents */}
+      <div className="hero-js-bg js-bg-1" aria-hidden="true" />
+      <div className="hero-js-bg js-bg-2" aria-hidden="true" />
+      <div className="hero-js-bg js-bg-3" aria-hidden="true" />
       <div className="section-container hero-content relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Left content */}

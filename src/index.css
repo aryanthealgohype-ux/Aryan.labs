@@ -288,6 +288,61 @@
     overflow: hidden;
   }
 
+  .hero-js-bg {
+    position: absolute;
+    --js-rotate: 0deg;
+    width: 180px;
+    height: 180px;
+    background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    filter: blur(0.4px) drop-shadow(0 18px 40px rgba(59, 130, 246, 0.35));
+    mix-blend-mode: screen;
+    animation: js-float 14s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .js-bg-1 {
+    top: 6%;
+    left: 4%;
+    --js-rotate: -12deg;
+    animation-delay: 0s;
+  }
+
+  .js-bg-2 {
+    bottom: 12%;
+    left: 16%;
+    width: 140px;
+    height: 140px;
+    --js-rotate: 18deg;
+    animation-delay: 2s;
+  }
+
+  .js-bg-3 {
+    top: 18%;
+    right: 6%;
+    width: 200px;
+    height: 200px;
+    --js-rotate: -6deg;
+    animation-delay: 4s;
+  }
+
+  @keyframes js-float {
+    0% {
+      transform: translateY(0) rotate(var(--js-rotate));
+      opacity: 0.06;
+    }
+    50% {
+      transform: translateY(-10px) rotate(calc(var(--js-rotate) + 6deg));
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateY(0) rotate(var(--js-rotate));
+      opacity: 0.06;
+    }
+  }
+
   /* Underwater Effects */
   .ray {
     position: absolute;
