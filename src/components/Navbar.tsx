@@ -45,12 +45,12 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
-      <div className="flex items-center justify-between w-full max-w-3xl bg-secondary/80 backdrop-blur-xl rounded-full px-4 sm:px-5 py-2 glow-border navbar-no-glow">
+      <div className="flex items-center justify-between w-full max-w-sm md:max-w-3xl lg:max-w-5xl bg-secondary/80 backdrop-blur-xl rounded-full px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 glow-border navbar-no-glow">
         <a href="#" className="flex items-center gap-2.5 transition-transform hover:scale-105 active:scale-95 group">
           <img
             src="/logo/logo-dark-mode.png"
             alt="Aryan Labs Logo"
-            className="h-20 w-auto"
+            className="h-12 sm:h-16 lg:h-20 w-auto"
           />
         </a>
 
