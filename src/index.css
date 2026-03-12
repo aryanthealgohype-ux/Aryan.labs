@@ -105,6 +105,12 @@
   html {
     scroll-behavior: smooth;
   }
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 @layer components {
@@ -232,6 +238,14 @@
     white-space: nowrap;
     border-right: 3px solid hsl(217 100% 50%);
     animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+  }
+
+  @media (max-width: 640px) {
+    .typing-effect {
+      white-space: normal;
+      border-right: none;
+      animation: none;
+    }
   }
 
   .text-gradient-blue {

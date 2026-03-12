@@ -39,7 +39,7 @@ const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -68,7 +68,7 @@ const ChatWidget = () => {
 
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full btn-3d text-primary-foreground flex items-center justify-center shadow-xl"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full btn-3d text-primary-foreground flex items-center justify-center shadow-xl"
         whileTap={{ scale: 0.9 }}
         aria-label="Chat options"
       >
