@@ -1,10 +1,24 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  const origin = process.env.CORS_ORIGIN || "*";
-  res.setHeader("Access-Control-Allow-Origin", origin);
+  const requestOrigin = req.headers.origin;
+  const allowedOrigins = (process.env.CORS_ORIGIN || "")
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const allowOrigin =
+    !allowedOrigins.length || allowedOrigins.includes("*")
+      ? "*"
+      : allowedOrigins.includes(requestOrigin)
+        ? requestOrigin
+        : "";
+
+  if (allowOrigin) {
+    res.setHeader("Access-Control-Allow-Origin", allowOrigin);
+  }
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Vary", "Origin");
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();
