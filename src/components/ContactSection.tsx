@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Send } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import heroBg from "@/assets/hero-bg.jfif";
@@ -7,6 +7,9 @@ const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [status, setStatus] = useState<{ type: "success" | "error" | null; message: string }>({ type: null, message: "" });
   const [loading, setLoading] = useState(false);
+  const apiBase =
+    (import.meta as { env?: { VITE_API_BASE?: string } }).env?.VITE_API_BASE ||
+    "https://api-jo1hunk1l-aryanthealgohype-2950s-projects.vercel.app";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,7 +17,7 @@ const ContactSection = () => {
     setStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${apiBase}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -95,7 +98,7 @@ const ContactSection = () => {
                   <option value="Website Development">Website Development</option>
                   <option value="Performance & Speed">Performance & Speed</option>
                   <option value="SEO & Visibility">SEO & Visibility</option>
-                  <option value="Mobile‑First Build">Mobile‑First Build</option>
+                  <option value="Mobile-First Build">Mobile-First Build</option>
                   <option value="Secure & Reliable">Secure & Reliable</option>
                 </select>
                 <textarea
@@ -128,7 +131,7 @@ const ContactSection = () => {
           <div className="beam-border beam-border-soft rounded-2xl">
             <div className="bg-card rounded-2xl p-6 sm:p-8 h-full flex items-center">
               <p className="text-lg sm:text-xl font-semibold text-foreground leading-relaxed">
-                “Your vision, beautifully built — a modern, fast, and trustworthy website that makes clients say yes.”
+                "Your vision, beautifully built - a modern, fast, and trustworthy website that makes clients say yes."
               </p>
             </div>
           </div>
@@ -140,3 +143,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
