@@ -47,11 +47,11 @@ const ProjectDetail = () => {
             </div>
             <div>
               <h2 className="text-lg font-semibold mb-2">Highlights</h2>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-3">
                 {project.details.highlights.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span>{item}</span>
+                  <li key={item} className="highlight-card">
+                    <span className="highlight-dot" />
+                    <span className="highlight-text">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -74,3 +74,4 @@ const ProjectDetail = () => {
 };
 
 export default ProjectDetail;
+

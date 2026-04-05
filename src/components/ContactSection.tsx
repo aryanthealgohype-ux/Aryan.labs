@@ -9,7 +9,9 @@ const ContactSection = () => {
   const [loading, setLoading] = useState(false);
   const apiBase =
     (import.meta as { env?: { VITE_API_BASE?: string } }).env?.VITE_API_BASE ||
-    "https://api-jo1hunk1l-aryanthealgohype-2950s-projects.vercel.app";
+    (typeof window !== "undefined" && window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://api-eight-gamma-76.vercel.app");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

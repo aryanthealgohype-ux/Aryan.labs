@@ -350,6 +350,51 @@
 
 
 
+  .highlight-card {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border-radius: 16px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(16, 185, 129, 0.04));
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.18), inset 0 0 18px rgba(16, 185, 129, 0.08);
+    color: hsl(150 35% 18%);
+    overflow: hidden;
+  }
+
+  .highlight-card::before {
+    content: "";
+    position: absolute;
+    inset: -40% 40% 0 -30%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35), transparent 60%);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .highlight-dot {
+    margin-top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(16, 185, 129, 0.85));
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
+    flex-shrink: 0;
+  }
+
+  .highlight-text {
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+  }
+
+  .dark .highlight-card {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(6, 78, 59, 0.6));
+    border-color: rgba(16, 185, 129, 0.45);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25), inset 0 0 20px rgba(16, 185, 129, 0.12);
+    color: hsl(150 70% 92%);
+  }
   .projects-timeline {
     position: relative;
     display: flex;
@@ -532,3 +577,4 @@
     }
   }
 }
+
